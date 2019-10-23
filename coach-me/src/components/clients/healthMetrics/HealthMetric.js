@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import { connect } from 'react-redux';
 import HealthMetricCards from './HealthMetricCards';
 import MetricDisplay from './MetricDisplay';
 import { getClientRecords } from '../../../actions/clientActions';

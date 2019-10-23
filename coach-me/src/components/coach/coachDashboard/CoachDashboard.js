@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import './coachDashboard.scss';
-import ClientInfo from './clientsList/ClientInfo';
-import ClientCard from './clientsList/ClientCard';
 
 const CoachDashboard = ({ history }) => {
     const [users, setUsers] = useState();
@@ -21,8 +18,6 @@ const CoachDashboard = ({ history }) => {
             .then(res => setUsers(res.data.records))
             .catch(err => console.log(err));
     }, []);
-
-    // console.log(users);
 
     const handleInput = e => {
         setNumber(e.target.value);

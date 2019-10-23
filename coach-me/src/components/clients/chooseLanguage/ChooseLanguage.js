@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { translate } from '../../utils/language/translate';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './chooseLanguage.scss';
-import TestTranslator from './TestTranslator';
 
 const ChooseLanguage = props => {
     const [langPref, setLangPref] = useState('esp');
-    const dispatch = useDispatch();
 
     return (
         <div className='container'>

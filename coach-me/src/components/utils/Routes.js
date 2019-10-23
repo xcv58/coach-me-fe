@@ -1,6 +1,6 @@
 import React from 'react';
 import PrivateRoute from './PrivateRoute';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import HealthMetric from '../clients/healthMetrics/HealthMetric';
 import CoachDashboard from '../coach/coachDashboard/CoachDashboard';
 import ClientDashboard from '../clients/clientDashboard/ClientDashboard';

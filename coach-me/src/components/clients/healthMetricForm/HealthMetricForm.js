@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateMetric } from '../../../actions/clientActions';
+import { useDispatch } from 'react-redux';
 import { addMetric } from '../../../actions/clientActions';
 import iconfastingBloodGlucose from '../../utils/assets/Blood.svg';
 import iconbloodPressure from '../../utils/assets/bloodPressure.svg';
@@ -9,7 +8,6 @@ import { translate } from '../../utils/language/translate';
 import './healthMetricForm.scss';
 
 function HealthMetricForm(props) {
-    const state = useSelector(state => state);
     const dispatch = useDispatch();
     const [bpOver, setBpOver] = useState();
     const [bpUnder, setBpUnder] = useState();

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import HealthMetric from '../healthMetrics/HealthMetric';
 import './clientDashboard.scss';
 
 const ClientDashboard = () => {
-    const [userId, setUserId] = useState('recZNs8pQo2rSsw0T');
-    const [checkinList, setCheckinList] = useState([]);
+    const [userId] = useState('recZNs8pQo2rSsw0T');
+    const [checkinList] = useState([]);
 
     return (
         <div className='client-dashboard'>
