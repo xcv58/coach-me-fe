@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import './coachDashboard.scss';
 import ClientInfo from './clientsList/ClientInfo';
 import ClientCard from './clientsList/ClientCard';
@@ -21,7 +20,6 @@ const CoachDashboard = ({ history }) => {
             .then(res => setUsers(res.data.records))
             .catch(err => console.log(err));
     }, []);
-
 
     const handleInput = e => {
         setNumber(e.target.value);
@@ -45,99 +43,18 @@ const CoachDashboard = ({ history }) => {
 
     return (
         <>
-            {checkTwo ? (
-                <div className='welcome'>
-                    <div className='side-one'>
-                        <img
-                            src='https://i.imgur.com/7YHZ8gM.jpg'
-                            alt='Placeholder'
-                        />
-                    </div>
-                    <div className='side-two'>
-                        <h1>Welcome to CoachMe!</h1>
-                        <p>
-                            Efficiently facilitate cutting-edge e-tailers
-                            without just in time value.
-                        </p>
-                        <div
-                            className='continue-btn'
-                            onClick={handleCheckThree}
-                        >
-                            Continue
-                        </div>
-                    </div>
+            <div className='dashboard'>
+                <div className='side-one'>
+                    <img
+                        src='https://i.imgur.com/eZTEnXz.png'
+                        alt='CoachMe Logo'
+                    />
                 </div>
-            ) : (
-                <div className='dashboard'>
-                    <div className='side-one'>
-                        <h1>Let's get you started!</h1>
-                        <p>
-                            Objectively deliver vertical internal or "organic"
-                            sources vis-a-vis turnkey oppurtunities
-                        </p>
-                        <img
-                            src='https://i.imgur.com/7YHZ8gM.jpg'
-                            alt='Placeholder'
-                        />
-                    </div>
-                    {checkOne ? (
-                        <div className='side-two'>
-                            <h1>Confirm Number</h1>
-                            <p>
-                                Enter 4 digit code that was sent to +1 {number}.
-                            </p>
-                            <input
-                                type='text'
-                                value={verifyNumber}
-                                onChange={handleInputTwo}
-                                maxLength='4'
-                            />
-
-                            <div className='flex'>
-                                <p>Change phone number?</p>
-                                <p>Resend Code</p>
-                            </div>
-                            {verifyNumber ? (
-                                <div
-                                    className='send-btn'
-                                    onClick={handleCheckTwo}
-                                >
-                                    Confirm
-                                </div>
-                            ) : (
-                                <div className='send-btn-disabled'>Confirm</div>
-                            )}
-                        </div>
-                    ) : (
-                        <div className='side-two'>
-                            <h1>Phone Number</h1>
-                            <p>
-                                Enter a phone number below. We will send you a
-                                code to verify.
-                            </p>
-                            <input
-                                type='number'
-                                placeholder='Mobile number'
-                                value={number}
-                                onChange={handleInput}
-                                maxLength='10'
-                            />
-
-                            {number ? (
-                                <div
-                                    className='send-btn'
-                                    onClick={handleCheckOne}
-                                >
-                                    Send Code
-                                </div>
-                            ) : (
-                                <div className='send-btn-disabled'>
-                                    Send Code
-                                </div>
-                            )}
-                        </div>
-                    )}
+                <div className='side-two'>
+                    <h1>Sign Up</h1>
                 </div>
+                )}
+            </div>
             )}
         </>
     );
