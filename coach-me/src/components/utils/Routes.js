@@ -15,6 +15,7 @@ import CoachRegistration from '../coach/coachRegistration/coachRegistration';
 import FormLogin from '../clients/loginClient/formLogin';
 import '../../App.css';
 import LoginCoach from '../coach/loginCoach/LoginCoach';
+import ResetPassword from '../coach/resetPassword/ResetPassword';
 const Routes = props => {
     return (
         <>
@@ -45,6 +46,7 @@ const Routes = props => {
             <PrivateRoute path='/translator' component={TestTranslator} />
             <PrivateRoute path='/metric-form' component={HealthMetricForm} />
             <PrivateRoute path='/welcome' component={Welcome} />
+            <PrivateRoute path='/reset' component={ResetPassword} />
         </>
     );
 };
