@@ -16,8 +16,8 @@ function ScheduledMessages (props) {
     }
     return (
         <>
-        <div>
-        <img></img>
+        {/* <div> */}
+        {/* <img></img>
         <h3>Back</h3>
         </div>
         <form onSubmit={submitNewMessage}>
@@ -204,12 +204,12 @@ function ScheduledMessages (props) {
         <p>Weekly</p>
         <p>Monthly</p>
      </div>
-       <button>Save</button>
+       <button>Save</button> */}
 
-                </div>
-            </div>
+                {/* </div> */}
+            {/* </div> */}
 
-        </form>
+        {/* </form> */}
         
              
            
