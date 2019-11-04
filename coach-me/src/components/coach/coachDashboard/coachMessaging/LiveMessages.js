@@ -24,6 +24,13 @@ function LiveMessages(props) {
     console.log('state.coach', state.coach);
 
     useEffect(() => {
+        const interval = setInterval(() => {
+            dispatch(getMessageHistory())
+        }, 15000)
+        return () => clearInterval(interval)
+    }, [])
+
+    useEffect(() => {
         if (
             state.coach.messageHistory.length ===
             state.coach.messageHistory.length + 1
