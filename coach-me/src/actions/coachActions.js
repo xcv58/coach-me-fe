@@ -14,7 +14,6 @@ const headers = {
     Authorization: localStorage.getItem('token')
 };
 
-
 export const getMessageHistory = liveNumber => dispatch => {
     dispatch({ type: GET_TEXT_START });
     axios
@@ -55,7 +54,6 @@ export const postMessage = post => dispatch => {
 };
 
 export const getClients = token => dispatch => {
-    
     dispatch({ type: GET_RECORDS_START });
     axios
         .get(`${process.env.REACT_APP_BACK_END_URL}/coachRoute/getPatients`, {

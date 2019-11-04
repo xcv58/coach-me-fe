@@ -15,29 +15,33 @@ function LiveMessages(props) {
     const state = useSelector(state => state);
     const dispatch = useDispatch();
 
-    const [message, setMessage] = useState({message:'', Phone:'(806) 518-8727'})
-    
+    const [message, setMessage] = useState({
+        message: '',
+        Phone: '(806) 518-8727'
+    });
+
     console.log('LiveMessages State', state);
-    console.log('state.coach',state.coach)
+    console.log('state.coach', state.coach);
 
     useEffect(() => {
-      if(state.coach.messageHistory.length ===state.coach.messageHistory.length+1) {
-       dispatch(getMessageHistory());
-    } else if(state.coach.messageHistory.length === 0){
-        dispatch(getMessageHistory())
-    }
-}, [state.coach.messageHistory]);
+        if (
+            state.coach.messageHistory.length ===
+            state.coach.messageHistory.length + 1
+        ) {
+            dispatch(getMessageHistory());
+        } else if (state.coach.messageHistory.length === 0) {
+            dispatch(getMessageHistory());
+        }
+    }, [state.coach.messageHistory]);
 
     const handleInputChange = e => {
-      setMessage({...message, message:e.target.value})
-       
+        setMessage({ ...message, message: e.target.value });
     };
 
     const submitNewMessage = e => {
         e.preventDefault();
         {
             dispatch(postMessage(message));
-           
         }
     };
     return (
@@ -47,7 +51,8 @@ function LiveMessages(props) {
             <div className='message-container'>
                 {state.coach.messageHistory &&
                     state.coach.messageHistory.map((m, i) => (
-                        <div key={i}
+                        <div
+                            key={i}
                             // className={`messages ${
                             //     m.direction === 'inBound' ? 'left' : 'right'
                             // }`}

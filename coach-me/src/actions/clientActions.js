@@ -3,12 +3,15 @@ import {
     GET_CLIENTS_START,
     GET_CLIENTS_SUCCESS,
     GET_CLIENTS_FAILURE,
+    ADD_CLIENT,
+    DELETE_CLIENT,
+    CLIENTS_ERROR,
     UPDATE_METRIC_START,
     UPDATE_METRIC_SUCCESS,
     UPDATE_METRIC_FAILURE,
-    GET_RECORDS_START,
-    GET_RECORDS_SUCCESS,
-    GET_RECORDS_FAILURE
+    GET_METRICS_START,
+    GET_METRICS_SUCCESS,
+    GET_METRICS_FAILURE
 } from './types';
 
 const headers = {
@@ -66,7 +69,7 @@ export const getClientInfoLogin = props => dispatch => {
             const loginAttempts = localStorage.getItem('loginAttempts');
             // console.log('Look at all this info!', loginAttempts);
 
-            props.history.push('metric-form');
+            props.history.push('/metric-form');
 
             dispatch({
                 type: GET_CLIENTS_SUCCESS,
@@ -88,7 +91,10 @@ export const addMetric = metricUpdate => dispatch => {
             `${process.env.REACT_APP_BACK_END_URL}/clientRoute/logMetrics `,
             metricUpdate,
             {
-                headers: headers
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: localStorage.getItem('token')
+                }
             }
         )
         .then(res => {
@@ -105,25 +111,27 @@ export const addMetric = metricUpdate => dispatch => {
         });
 };
 
-export const getClientRecords = clientId => dispatch => {
-    dispatch({ type: GET_RECORDS_START });
+export const getClientRecords = () => dispatch => {
+    dispatch({ type: GET_METRICS_START });
     axios
         .get(
             `${process.env.REACT_APP_BACK_END_URL}/clientRoute/paginationGetMetrics`,
             {
-                headers: headers
+                headers: {
+                    Authorization: localStorage.getItem('token')
+                }
             }
         )
         .then(results => {
             const clientRecords = [...results.data.clientRecords];
             dispatch({
-                type: GET_RECORDS_SUCCESS,
+                type: GET_METRICS_SUCCESS,
                 payload: clientRecords
             });
         })
         .catch(err => {
             dispatch({
-                type: GET_RECORDS_FAILURE,
+                type: GET_METRICS_FAILURE,
                 payload: err.message
             });
         });
