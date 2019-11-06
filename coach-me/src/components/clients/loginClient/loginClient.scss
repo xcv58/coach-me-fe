@@ -73,36 +73,35 @@ $input-background: #ffffff;
     }
 }
 
-    .form-container {
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    form {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
         margin: 0 auto;
 
-        form {
+        .num-inputs {
             display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-
-            .num-inputs {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .trigger {
-                align-self: flex-end;
-                background: #ffffff;
-                border-radius: 20px;
-                width: 69px;
-                height: 52px;
-                color: #274160;
-                font-size: 1.3rem;
-                border: 1.5px solid #274160;
-                margin-right: 10%;
-                margin-top: 5%;
-            }
+            justify-content: center;
+            align-items: center;
+        }
+        .trigger {
+            align-self: flex-end;
+            background: #ffffff;
+            border-radius: 20px;
+            width: 69px;
+            height: 52px;
+            color: #274160;
+            font-size: 1.3rem;
+            border: 1.5px solid #274160;
+            margin-right: 10%;
+            margin-top: 5%;
         }
     }
 }
