@@ -39,7 +39,6 @@ $input-background: #ffffff;
         flex-direction: column;
         justify-content: center;
         width: 70%;
-
         p {
             display: flex;
             font-family: 'DM Sans', sans-serif;
@@ -54,7 +53,6 @@ $input-background: #ffffff;
             font-size: 2rem;
         }
     }
-
     .subtext {
         margin: 0 auto;
         display: flex;
@@ -74,14 +72,6 @@ $input-background: #ffffff;
         }
     }
 }
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
 
     .form-container {
         display: flex;

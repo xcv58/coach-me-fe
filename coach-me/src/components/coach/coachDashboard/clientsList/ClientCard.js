@@ -13,7 +13,6 @@ const ClientCard = props => {
                 if (props.client.clientName) {
                     check(props.client.clientName);
                 }
-
                 setClient(props.client.clientId);
             }}
         >
